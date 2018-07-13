@@ -1,8 +1,14 @@
 <template>
   <view class="ads-body">
-    <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+    <!-- <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
           <text selectable="true" class="scroll-view-item_H color-pink">{{ads}}</text>
-    </scroll-view>
+    </scroll-view> -->
+     <swiper class="swiper" style="height:30px" autoplay="{{autoplay}}"
+   indicator-dots="{{indicatorDots}}">
+      <swiper-item wx:for="{{ads}}"  wx:key="index">
+          <text  class="scroll-view-item_H color-pink">{{item}}</text>
+      </swiper-item>
+  </swiper>
   </view>
 
 </template>
@@ -13,13 +19,14 @@
   export default class ads extends wepy.component {
     props = {
       ads: {
-        type: String,
-        default: '每一个不曾起舞的日子，都是对生命的辜负。'
+        type: Object,
+        default: ['欢迎加群：575180837','主站：www.calamus.xyz']
       }
     }
 
     data = {
-
+      autoplay: true,
+      indicatorDots:false,
     }
 
     computed = {

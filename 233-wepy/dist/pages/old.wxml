@@ -50,20 +50,12 @@
 
 
 
-    
-  <view class="ads-body">
-    <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
-          <text selectable="true" class="scroll-view-item_H color-pink">{{$Ads$ads}}</text>
-    </scroll-view>
-  </view>
-
-
     <!--主内容区域-->
       <view  wx:if="{{init}}" class="main-box row">
         
   <scroll-view class="side-tab" scroll-y>
     <block  wx:for="{{$SideTab$tab.list}}" wx:key="id">
-      <view class="tab-item {{item.id == $SideTab$tab.selectedId ? 'tab-item-seleted' : ''}}" bindtap="$SideTab$switchTab" data-wpyswitchtab-a="{{item.id}}">
+      <view class="tab-item {{item.id == $SideTab$tab.selectedId ? 'tab-item-seleted' : ''}}" bindtap="$SideTab$switchTab" data-wpyswitchtab-a="{{item}}">
         <text class="inline">{{item.title}}</text>
         <view class="weui-badge tab-num" wx:if="{{item.count > 0}}">{{item.count}}</view>
       </view>
@@ -82,21 +74,13 @@
   <view class="animelist">
     <block  wx:if="{{$imageList$list.length > 0}}">
       <block wx:for="{{$imageList$list}}" wx:key="index">
-        <navigator url="/pages/detail" class="animelist-item">
+        <navigator url="/pages/webDetail" class="animelist-item">
           <view class="animelist-item-image">
             <image src="{{item.image[0]}}" mode="aspectFill"/>
           </view>
           <text class="animeList-item-name">{{item.name}}</text>
         </navigator>
       </block>
-    </block>
-    <block  wx:else>
-      <view class="weui-loadmore weui-loadmore_line">
-        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无推荐</view>
-      </view>
-    </block>
-  </view>
-  <view>
       <block wx:if="{{$imageList$loading}}">
         <view class="weui-loadmore">
           <view class="weui-loading"/>
@@ -108,6 +92,12 @@
           <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"/>
         </view>
       </block>
+    </block>
+    <block  wx:else>
+      <view class="weui-loadmore weui-loadmore_line">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无推荐</view>
+      </view>
+    </block>
   </view>
 </view>
 

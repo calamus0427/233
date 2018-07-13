@@ -1,3 +1,6 @@
+<!--
+@page 详情页
+-->
 <style lang="less">
 .detail-cover{
     display: block;

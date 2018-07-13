@@ -39,8 +39,8 @@
 
     data = {
       autoplay: true,
-      indicatorColor: 'rgba(255, 255, 255, 0.6)',
-      indicatorActiveColor: 'rgba(255, 255, 255, 1)'
+      indicatorColor: '#ffffff',
+      indicatorActiveColor: '#FF5577'
     }
 
     computed = {

@@ -1,6 +1,7 @@
 
   <view>
-    <!-- <SearchBar v-bind:inputVal.once="inputVal" placeholder="搜索"></SearchBar> -->
+    <!-- {{search}}
+    <SearchBar v-bind:inputVal.once="search" placeholder="搜索"></SearchBar> -->
     
   <view class="animelist">
     <view  wx:if="{{$animeList$title}}" class="animelist-name color-gray">
@@ -9,7 +10,7 @@
     </view>
     <block  wx:if="{{$animeList$list.length > 0}}">
       <block wx:for="{{$animeList$list}}" wx:key="index">
-        <navigator url="/pages/detail" class="animelist-item">
+        <navigator url="/pages/webDetail" class="animelist-item">
           <view class="animelist-item-image">
             <image src="{{item.image[0]}}" mode="aspectFill"/>
           </view>
@@ -66,7 +67,7 @@
     </block>
     <block wx:else>
       <view class="weui-loadmore weui-loadmore_line">
-        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无推荐</view>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">{{$animeList$nomoretitle}}</view>
       </view>
     </block>
   </view>

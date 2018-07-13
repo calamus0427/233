@@ -1,15 +1,17 @@
+<!--
+@page 类型索引
+-->
 <style lang="less">
 
 </style>
 <template>
     <view  >
           <SearchBar type="tag"  :placeholder="searchText"></SearchBar>
-    <Ads></Ads>
     <!--主内容区域-->
       <view wx:if="{{init}}" class="main-box row">
         <SideTab :tab="categories"  @change.user="switchTab"/>
         <scroll-view scroll-y class="goods-box">
-          <imageList></imageList>
+          <imageList :list.sync="list"></imageList>
         </scroll-view>
       </view>
 
@@ -46,10 +48,12 @@
 
     data = {
       init:true,
+      currentId:'1',
+      currentTitle:'搞笑',
       categories: {
                 'list':[
-                  {'id':'1','title':'催泪'},
-                  {'id':'2','title':'搞笑'},
+                  {'id':'1','title':'搞笑'},
+                  {'id':'2','title':'催泪'},
                   {'id':'3','title':'治愈'},
                   {'id':'4','title':'致郁'},
                   {'id':'5','title':'国产'},
@@ -63,18 +67,108 @@
                   {'id':'13','title':'后宫'},
                   {'id':'14','title':'机甲'}
                   ],
-                  'selectedId':'1'
-                }
+                  'selectedId':'1',
+                  'currentTitle':'搞笑'
+                },
+      defaultList:[{
+            'name':'overloadIII',
+            'image':['http://pbsp6zdxi.bkt.clouddn.com/image/233/overload.jpg','',''],
+            'description':'吾乃侍奉无上至尊之人',
+            'content':'',
+            'tag':['装逼','异世界'],
+            'stars':'5',
+            'createTime':'2018-07-10',
+            'flag':'1',
+            'author':'',
+            'type':'game',
+            'company':'',
+            'id':''
+          },{
+            'name':'杀戮天使',
+            'image':['http://pbsp6zdxi.bkt.clouddn.com/image/233/tianshi.jpg','',''],
+            'description':'13岁的少女瑞吉儿，在某个大楼最底层苏醒后，瑞吉儿失去了所有的记忆，并试着从这里逃出去',
+            'content':'',
+            'tag':['恐怖','悬疑','冒险'],
+            'stars':'5',
+            'createTime':'2018-07-06',
+            'flag':'1',
+            'author':'',
+            'type':'game',
+            'company':'',
+            'id':''
+          },{
+            'name':'工作细胞',
+            'image':['http://pbsp6zdxi.bkt.clouddn.com/image/233/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%83%9E.jpg','',''],
+            'description':'夭寿了，我的细胞在我的体内谈恋爱了',
+            'content':'',
+            'tag':['教育','卖萌','恋爱','声优不要钱','搞笑'],
+            'stars':'5',
+            'createTime':'2018-07-7',
+            'flag':'1',
+            'author':'',
+            'type':'game',
+            'company':'',
+            'id':''
+          },{
+            'name':'后街女孩',
+            'image':['http://pbsp6zdxi.bkt.clouddn.com/image/233/%E5%90%8E%E8%A1%97%E5%A5%B3%E5%AD%A9.jpg','',''],
+            'description':'一起成为偶像吧233',
+            'content':'',
+            'tag':['搞笑','偶像'],
+            'stars':'5',
+            'createTime':'2018-07-4',
+            'flag':'1',
+            'author':'',
+            'type':'game',
+            'company':'',
+            'id':''
+          },{
+            'name':'进击的巨人III',
+            'image':['http://pbsp6zdxi.bkt.clouddn.com/image/233/%E5%B7%A8%E4%BA%BA.jpg','',''],
+            'description':'那一天，人类想起来被巨人支配的恐怖',
+            'content':'',
+            'tag':['热血','战斗'],
+            'stars':'5',
+            'createTime':'2018-07-22',
+            'flag':'1',
+            'author':'',
+            'type':'game',
+            'company':'',
+            'id':''
+          },{
+            'name':'命运石之门0',
+            'image':['http://p79mwfmry.bkt.clouddn.com/%E7%9F%B3%E5%A4%B4%E9%97%A8.jpg','',''],
+            'description':'一切都是命运石之门的选择',
+            'content':'',
+            'tag':['致郁','时间穿越','神作'],
+            'stars':'5',
+            'createTime':'2013-04-20',
+            'flag':'1',
+            'author':'',
+            'type':'game',
+            'company':'',
+            'id':''
+          }]
     }
 
     computed = {
-
+      list(){
+        console.log(this.currentTitle)
+        var list = this.defaultList.filter((res)=>{
+          return res.tag.indexOf(this.currentTitle) > -1
+        })
+        return list ;
+        // console.log(this.currentId,this.defaultList.slice(this.currentId-1,this.currentId))
+        // return this.defaultList.slice(this.currentId-1,this.currentId);
+      }
     }
 
     methods = {
       // 点击分类
-      switchTab(selectedId) {
-        console.log(selectedId)
+      switchTab(item) {
+        console.log(item)
+        this.currentId = item.id;
+        this.currentTitle = item.title;
         // this.tab.categoryId = selectedId;
         // this.reload();
       }
@@ -137,7 +231,7 @@
   display:flex;
   width: 100%;
   position: absolute;
-  top: 80px;
+  top:49px;
   bottom: 0px;
   .goods-box{
     flex: 1;

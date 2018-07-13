@@ -51,8 +51,20 @@
 
 
     
-  <view class="pannel">
-    paanel
+<view>
+   <view class="pannel">
+    <view class="pannel-title">大家都在搜</view>
+    <view class="pannel-content">
+       <text  wx:for="{{$pannelTag$searchTags}}" wx:key="index" bindtap="$pannelTag$tapAll" class="tags" data-wpytapall-a="{{item}}">{{item}}</text>
+    </view>
   </view>
+   <view class="pannel">
+    <view class="pannel-title">搜索历史</view>
+    <view class="pannel-content">
+       <text  wx:for="{{$pannelTag$searchHistory}}" wx:key="index" bindtap="$pannelTag$tapHistory" class="tags" data-wpytaphistory-a="{{item}}">{{item}}</text>
+    </view>
+  </view>
+</view>
+
 
   </view>

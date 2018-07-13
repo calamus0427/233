@@ -33,14 +33,17 @@ var ads = function (_wepy$component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ads.__proto__ || Object.getPrototypeOf(ads)).call.apply(_ref, [this].concat(args))), _this), _this.props = {
       ads: {
-        type: String,
-        default: '每一个不曾起舞的日子，都是对生命的辜负。'
+        type: Object,
+        default: ['欢迎加群：575180837', '主站：www.calamus.xyz']
       }
-    }, _this.data = {}, _this.computed = {}, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.data = {
+      autoplay: true,
+      indicatorDots: false
+    }, _this.computed = {}, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   return ads;
 }(_wepy2.default.component);
 
 exports.default = ads;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkcy5qcyJdLCJuYW1lcyI6WyJhZHMiLCJwcm9wcyIsInR5cGUiLCJTdHJpbmciLCJkZWZhdWx0IiwiZGF0YSIsImNvbXB1dGVkIiwibWV0aG9kcyIsIndlcHkiLCJjb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFDRTs7Ozs7Ozs7Ozs7O0lBRXFCQSxHOzs7Ozs7Ozs7Ozs7OztnTEFDbkJDLEssR0FBUTtBQUNORCxXQUFLO0FBQ0hFLGNBQU1DLE1BREg7QUFFSEMsaUJBQVM7QUFGTjtBQURDLEssUUFPUkMsSSxHQUFPLEUsUUFJUEMsUSxHQUFXLEUsUUFJWEMsTyxHQUFVLEU7Ozs7RUFoQnFCQyxlQUFLQyxTOztrQkFBakJULEciLCJmaWxlIjoiYWRzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gIGltcG9ydCB3ZXB5IGZyb20gJ3dlcHknXG5cbiAgZXhwb3J0IGRlZmF1bHQgY2xhc3MgYWRzIGV4dGVuZHMgd2VweS5jb21wb25lbnQge1xuICAgIHByb3BzID0ge1xuICAgICAgYWRzOiB7XG4gICAgICAgIHR5cGU6IFN0cmluZyxcbiAgICAgICAgZGVmYXVsdDogJ+avj+S4gOS4quS4jeabvui1t+iInueahOaXpeWtkO+8jOmDveaYr+WvueeUn+WRveeahOi+nOi0n+OAgidcbiAgICAgIH1cbiAgICB9XG5cbiAgICBkYXRhID0ge1xuXG4gICAgfVxuXG4gICAgY29tcHV0ZWQgPSB7XG5cbiAgICB9XG5cbiAgICBtZXRob2RzID0ge1xuICAgIH1cblxuXG4gIH1cbiJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkcy5qcyJdLCJuYW1lcyI6WyJhZHMiLCJwcm9wcyIsInR5cGUiLCJPYmplY3QiLCJkZWZhdWx0IiwiZGF0YSIsImF1dG9wbGF5IiwiaW5kaWNhdG9yRG90cyIsImNvbXB1dGVkIiwibWV0aG9kcyIsIndlcHkiLCJjb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFDRTs7Ozs7Ozs7Ozs7O0lBRXFCQSxHOzs7Ozs7Ozs7Ozs7OztnTEFDbkJDLEssR0FBUTtBQUNORCxXQUFLO0FBQ0hFLGNBQU1DLE1BREg7QUFFSEMsaUJBQVMsQ0FBQyxnQkFBRCxFQUFrQixvQkFBbEI7QUFGTjtBQURDLEssUUFPUkMsSSxHQUFPO0FBQ0xDLGdCQUFVLElBREw7QUFFTEMscUJBQWM7QUFGVCxLLFFBS1BDLFEsR0FBVyxFLFFBSVhDLE8sR0FBVSxFOzs7O0VBakJxQkMsZUFBS0MsUzs7a0JBQWpCWCxHIiwiZmlsZSI6ImFkcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuICBpbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuXG4gIGV4cG9ydCBkZWZhdWx0IGNsYXNzIGFkcyBleHRlbmRzIHdlcHkuY29tcG9uZW50IHtcbiAgICBwcm9wcyA9IHtcbiAgICAgIGFkczoge1xuICAgICAgICB0eXBlOiBPYmplY3QsXG4gICAgICAgIGRlZmF1bHQ6IFsn5qyi6L+O5Yqg576k77yaNTc1MTgwODM3Jywn5Li756uZ77yad3d3LmNhbGFtdXMueHl6J11cbiAgICAgIH1cbiAgICB9XG5cbiAgICBkYXRhID0ge1xuICAgICAgYXV0b3BsYXk6IHRydWUsXG4gICAgICBpbmRpY2F0b3JEb3RzOmZhbHNlLFxuICAgIH1cblxuICAgIGNvbXB1dGVkID0ge1xuXG4gICAgfVxuXG4gICAgbWV0aG9kcyA9IHtcbiAgICB9XG5cblxuICB9XG4iXX0=

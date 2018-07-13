@@ -6,7 +6,7 @@
     </view>
     <block wx:if="{{list.length > 0}}">
       <block wx:for="{{list}}" wx:key="index">
-        <navigator url="/pages/detail" class="animelist-item">
+        <navigator url="/pages/webDetail" class="animelist-item">
           <view class="animelist-item-image">
             <image src="{{item.image[0]}}" mode="aspectFill"/>
           </view>
@@ -55,7 +55,7 @@
     </block>
     <block wx:else>
       <view class="weui-loadmore weui-loadmore_line">
-        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无推荐</view>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">{{nomoretitle}}</view>
       </view>
     </block>
   </view>
@@ -75,22 +75,7 @@
     props = {
       list: {
         type: Object,
-        default: [
-          {
-            'name':'命运石之门',
-            'image':['http://p79mwfmry.bkt.clouddn.com/%E7%9F%B3%E5%A4%B4%E9%97%A8.jpg','',''],
-            'description':'一切都是命运石之门的选择',
-            'content':'',
-            'tag':['致郁','时间穿越','神作'],
-            'stars':'5',
-            'createTime':'2013-04-20',
-            'flag':'1',
-            'author':'',
-            'type':'game',
-            'company':'',
-            'id':''
-          }
-          ]
+        default: []
       },
       title: {
         type: String,
@@ -106,6 +91,10 @@
       noMore: {
         type: Boolean,
         default: true
+      },
+      nomoretitle:{
+        type:String,
+        default:'暂无推荐'
       },
       /**
        * [type 列表类型：常规列表/收藏列表]

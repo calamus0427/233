@@ -8,7 +8,8 @@
 </style>
 <template>
   <view>
-    <!-- <SearchBar :inputVal="inputVal" placeholder="搜索"></SearchBar> -->
+    <!-- {{search}}
+    <SearchBar :inputVal="search" placeholder="搜索"></SearchBar> -->
     <animeList :title="title"></animeList>
   </view>
 </template>
@@ -55,8 +56,9 @@
     }
     onLoad(query) {
       const inputVal = query.inputVal;
-      console.log("query",query)
+      console.log("query",query.inputVal)
       this.search = query.inputVal ;
+      this.title = query.inputVal
     }
   }
 </script>
