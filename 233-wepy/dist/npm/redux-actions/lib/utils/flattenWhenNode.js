@@ -1,37 +1,46 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _isMap = require('./../../../lodash/isMap.js');
-
-var _isMap2 = _interopRequireDefault(_isMap);
+exports.__esModule = true;
+exports.default = void 0;
 
 var _constants = require('./../constants.js');
 
-var _ownKeys = require('./ownKeys.js');
+var _isMap = _interopRequireDefault(require('./isMap.js'));
 
-var _ownKeys2 = _interopRequireDefault(_ownKeys);
+var _ownKeys = _interopRequireDefault(require('./ownKeys.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function get(key, x) {
-  return (0, _isMap2.default)(x) ? x.get(key) : x[key];
+  return (0, _isMap.default)(x) ? x.get(key) : x[key];
 }
 
-exports.default = function (predicate) {
-  return function flatten(map) {
-    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+var _default = function _default(predicate) {
+  return function flatten(map, _temp, partialFlatMap, partialFlatActionType) {
+    var _ref = _temp === void 0 ? {} : _temp,
         _ref$namespace = _ref.namespace,
-        namespace = _ref$namespace === undefined ? _constants.DEFAULT_NAMESPACE : _ref$namespace,
+        namespace = _ref$namespace === void 0 ? _constants.DEFAULT_NAMESPACE : _ref$namespace,
         prefix = _ref.prefix;
 
-    var partialFlatMap = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    var partialFlatActionType = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+    if (partialFlatMap === void 0) {
+      partialFlatMap = {};
+    }
+
+    if (partialFlatActionType === void 0) {
+      partialFlatActionType = '';
+    }
 
     function connectNamespace(type) {
-      return partialFlatActionType ? '' + partialFlatActionType + namespace + type : type;
+      var _ref2;
+
+      if (!partialFlatActionType) return type;
+      var types = type.toString().split(_constants.ACTION_TYPE_DELIMITER);
+      var partials = partialFlatActionType.split(_constants.ACTION_TYPE_DELIMITER);
+      return (_ref2 = []).concat.apply(_ref2, partials.map(function (p) {
+        return types.map(function (t) {
+          return "" + p + namespace + t;
+        });
+      })).join(_constants.ACTION_TYPE_DELIMITER);
     }
 
     function connectPrefix(type) {
@@ -39,20 +48,24 @@ exports.default = function (predicate) {
         return type;
       }
 
-      return '' + prefix + namespace + type;
+      return "" + prefix + namespace + type;
     }
 
-    (0, _ownKeys2.default)(map).forEach(function (type) {
+    (0, _ownKeys.default)(map).forEach(function (type) {
       var nextNamespace = connectPrefix(connectNamespace(type));
       var mapValue = get(type, map);
 
       if (predicate(mapValue)) {
-        flatten(mapValue, { namespace: namespace, prefix: prefix }, partialFlatMap, nextNamespace);
+        flatten(mapValue, {
+          namespace: namespace,
+          prefix: prefix
+        }, partialFlatMap, nextNamespace);
       } else {
         partialFlatMap[nextNamespace] = mapValue;
       }
     });
-
     return partialFlatMap;
   };
 };
+
+exports.default = _default;

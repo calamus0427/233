@@ -1,17 +1,14 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
+exports.default = void 0;
 
-var _isPlainObject = require('./../../../lodash/isPlainObject.js');
+var _isPlainObject = _interopRequireDefault(require('./isPlainObject.js'));
 
-var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
-
-var _flattenWhenNode = require('./flattenWhenNode.js');
-
-var _flattenWhenNode2 = _interopRequireDefault(_flattenWhenNode);
+var _flattenWhenNode = _interopRequireDefault(require('./flattenWhenNode.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = (0, _flattenWhenNode2.default)(_isPlainObject2.default);
+var _default = (0, _flattenWhenNode.default)(_isPlainObject.default);
+
+exports.default = _default;

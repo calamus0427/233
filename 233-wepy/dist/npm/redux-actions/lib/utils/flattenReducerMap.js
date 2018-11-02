@@ -1,27 +1,20 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
+exports.default = void 0;
 
-var _isPlainObject = require('./../../../lodash/isPlainObject.js');
+var _isPlainObject = _interopRequireDefault(require('./isPlainObject.js'));
 
-var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
+var _isMap = _interopRequireDefault(require('./isMap.js'));
 
-var _isMap = require('./../../../lodash/isMap.js');
+var _hasGeneratorInterface = _interopRequireDefault(require('./hasGeneratorInterface.js'));
 
-var _isMap2 = _interopRequireDefault(_isMap);
-
-var _hasGeneratorInterface = require('./hasGeneratorInterface.js');
-
-var _hasGeneratorInterface2 = _interopRequireDefault(_hasGeneratorInterface);
-
-var _flattenWhenNode = require('./flattenWhenNode.js');
-
-var _flattenWhenNode2 = _interopRequireDefault(_flattenWhenNode);
+var _flattenWhenNode = _interopRequireDefault(require('./flattenWhenNode.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = (0, _flattenWhenNode2.default)(function (node) {
-  return ((0, _isPlainObject2.default)(node) || (0, _isMap2.default)(node)) && !(0, _hasGeneratorInterface2.default)(node);
+var _default = (0, _flattenWhenNode.default)(function (node) {
+  return ((0, _isPlainObject.default)(node) || (0, _isMap.default)(node)) && !(0, _hasGeneratorInterface.default)(node);
 });
+
+exports.default = _default;

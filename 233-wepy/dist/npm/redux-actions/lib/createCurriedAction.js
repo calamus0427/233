@@ -1,19 +1,16 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
+exports.default = void 0;
 
-var _curry = require('./../../lodash/curry.js');
+var _justCurryIt = _interopRequireDefault(require('./../../just-curry-it/index.js'));
 
-var _curry2 = _interopRequireDefault(_curry);
-
-var _createAction = require('./createAction.js');
-
-var _createAction2 = _interopRequireDefault(_createAction);
+var _createAction = _interopRequireDefault(require('./createAction.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (type, payloadCreator) {
-  return (0, _curry2.default)((0, _createAction2.default)(type, payloadCreator), payloadCreator.length);
+var _default = function _default(type, payloadCreator) {
+  return (0, _justCurryIt.default)((0, _createAction.default)(type, payloadCreator), payloadCreator.length);
 };
+
+exports.default = _default;

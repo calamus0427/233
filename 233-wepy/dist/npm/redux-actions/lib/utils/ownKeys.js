@@ -1,18 +1,21 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
 exports.default = ownKeys;
 
-var _isMap = require('./../../../lodash/isMap.js');
-
-var _isMap2 = _interopRequireDefault(_isMap);
+var _isMap = _interopRequireDefault(require('./isMap.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object) {
-  if ((0, _isMap2.default)(object)) {
+  if ((0, _isMap.default)(object)) {
+    // We are using loose transforms in babel. Here we are trying to convert an
+    // interable to an array. Loose mode expects everything to already be an
+    // array. The problem is that our eslint rules encourage us to prefer
+    // spread over Array.from.
+    //
+    // Instead of disabling loose mode we simply disable the warning.
+    // eslint-disable-next-line unicorn/prefer-spread
     return Array.from(object.keys());
   }
 

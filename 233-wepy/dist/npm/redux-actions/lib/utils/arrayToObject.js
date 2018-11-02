@@ -1,11 +1,12 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
+exports.default = void 0;
 
-exports.default = function (array, callback) {
+var _default = function _default(array, callback) {
   return array.reduce(function (partialObject, element) {
     return callback(partialObject, element);
   }, {});
 };
+
+exports.default = _default;

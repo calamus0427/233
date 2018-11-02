@@ -1,17 +1,18 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
+exports.default = void 0;
 
-var _camelCase = require('./../../../lodash/camelCase.js');
-
-var _camelCase2 = _interopRequireDefault(_camelCase);
+var _toCamelCase = _interopRequireDefault(require('./../../../to-camel-case/index.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var namespacer = '/';
 
-exports.default = function (type) {
-  return type.indexOf(namespacer) === -1 ? (0, _camelCase2.default)(type) : type.split(namespacer).map(_camelCase2.default).join(namespacer);
+var _default = function _default(type) {
+  return type.indexOf(namespacer) === -1 ? (0, _toCamelCase.default)(type) : type.split(namespacer).map(function (part) {
+    return (0, _toCamelCase.default)(part);
+  }).join(namespacer);
 };
+
+exports.default = _default;

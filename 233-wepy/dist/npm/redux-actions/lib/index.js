@@ -1,39 +1,29 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.handleActions = exports.handleAction = exports.createCurriedAction = exports.createActions = exports.createAction = exports.combineActions = undefined;
+exports.__esModule = true;
 
-var _combineActions = require('./combineActions.js');
+var _combineActions = _interopRequireDefault(require('./combineActions.js'));
 
-var _combineActions2 = _interopRequireDefault(_combineActions);
+exports.combineActions = _combineActions.default;
 
-var _createAction = require('./createAction.js');
+var _createAction = _interopRequireDefault(require('./createAction.js'));
 
-var _createAction2 = _interopRequireDefault(_createAction);
+exports.createAction = _createAction.default;
 
-var _createActions = require('./createActions.js');
+var _createActions = _interopRequireDefault(require('./createActions.js'));
 
-var _createActions2 = _interopRequireDefault(_createActions);
+exports.createActions = _createActions.default;
 
-var _createCurriedAction = require('./createCurriedAction.js');
+var _createCurriedAction = _interopRequireDefault(require('./createCurriedAction.js'));
 
-var _createCurriedAction2 = _interopRequireDefault(_createCurriedAction);
+exports.createCurriedAction = _createCurriedAction.default;
 
-var _handleAction = require('./handleAction.js');
+var _handleAction = _interopRequireDefault(require('./handleAction.js'));
 
-var _handleAction2 = _interopRequireDefault(_handleAction);
+exports.handleAction = _handleAction.default;
 
-var _handleActions = require('./handleActions.js');
+var _handleActions = _interopRequireDefault(require('./handleActions.js'));
 
-var _handleActions2 = _interopRequireDefault(_handleActions);
+exports.handleActions = _handleActions.default;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.combineActions = _combineActions2.default;
-exports.createAction = _createAction2.default;
-exports.createActions = _createActions2.default;
-exports.createCurriedAction = _createCurriedAction2.default;
-exports.handleAction = _handleAction2.default;
-exports.handleActions = _handleActions2.default;

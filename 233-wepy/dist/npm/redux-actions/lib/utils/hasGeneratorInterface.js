@@ -1,18 +1,14 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
 exports.default = hasGeneratorInterface;
 
-var _ownKeys = require('./ownKeys.js');
-
-var _ownKeys2 = _interopRequireDefault(_ownKeys);
+var _ownKeys = _interopRequireDefault(require('./ownKeys.js'));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function hasGeneratorInterface(handler) {
-  var keys = (0, _ownKeys2.default)(handler);
+  var keys = (0, _ownKeys.default)(handler);
   var hasOnlyInterfaceNames = keys.every(function (ownKey) {
     return ownKey === 'next' || ownKey === 'throw';
   });
