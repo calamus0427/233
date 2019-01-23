@@ -111,11 +111,11 @@ var Top = (_dec = (0, _wepyRedux.connect)({
       Ads: _ads2.default,
       animeList: _animeList2.default
     }, _this.mixins = [_test2.default], _this.data = {
-      swipers: [{ image: 'http://p79mwfmry.bkt.clouddn.com/2.jpg', url: '' }, { image: 'http://p79mwfmry.bkt.clouddn.com/3.jpg', url: '' }],
+      swipers: [{ image: 'https://233.calamus.xyz/2.jpg', url: '' }, { image: 'https://233.calamus.xyz/3.jpg', url: '' }],
       ads: ['欢迎加群：575180837', '主站：www.calamus.xyz'],
       list: [{
         'name': 'overloadIII',
-        'image': ['http://pbsp6zdxi.bkt.clouddn.com/image/233/overload.jpg', '', ''],
+        'image': ['https://233.calamus.xyz/image/233/overload.jpg', '', ''],
         'description': '吾乃侍奉无上至尊之人',
         'content': '',
         'tag': ['装逼', '异世界'],
@@ -128,7 +128,7 @@ var Top = (_dec = (0, _wepyRedux.connect)({
         'id': ''
       }, {
         'name': '杀戮天使',
-        'image': ['http://pbsp6zdxi.bkt.clouddn.com/image/233/tianshi.jpg', '', ''],
+        'image': ['https://233.calamus.xyz/image/233/tianshi.jpg', '', ''],
         'description': '13岁的少女瑞吉儿，在某个大楼最底层苏醒后，瑞吉儿失去了所有的记忆，并试着从这里逃出去',
         'content': '',
         'tag': ['恐怖', '悬疑', '冒险'],
@@ -141,7 +141,7 @@ var Top = (_dec = (0, _wepyRedux.connect)({
         'id': ''
       }, {
         'name': '工作细胞',
-        'image': ['http://pbsp6zdxi.bkt.clouddn.com/image/233/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%83%9E.jpg', '', ''],
+        'image': ['https://233.calamus.xyz/image/233/%E5%B7%A5%E4%BD%9C%E7%BB%86%E8%83%9E.jpg', '', ''],
         'description': '夭寿了，我的细胞在我的体内谈恋爱了',
         'content': '',
         'tag': ['教育', '卖萌', '恋爱', '声优不要钱', '搞笑'],
@@ -154,7 +154,7 @@ var Top = (_dec = (0, _wepyRedux.connect)({
         'id': ''
       }, {
         'name': '后街女孩',
-        'image': ['http://pbsp6zdxi.bkt.clouddn.com/image/233/%E5%90%8E%E8%A1%97%E5%A5%B3%E5%AD%A9.jpg', '', ''],
+        'image': ['https://233.calamus.xyz/image/233/%E5%90%8E%E8%A1%97%E5%A5%B3%E5%AD%A9.jpg', '', ''],
         'description': '一起成为偶像吧233',
         'content': '',
         'tag': ['搞笑', '偶像'],
@@ -167,7 +167,7 @@ var Top = (_dec = (0, _wepyRedux.connect)({
         'id': ''
       }, {
         'name': '进击的巨人III',
-        'image': ['http://pbsp6zdxi.bkt.clouddn.com/image/233/%E5%B7%A8%E4%BA%BA.jpg', '', ''],
+        'image': ['https://233.calamus.xyz/image/233/%E5%B7%A8%E4%BA%BA.jpg', '', ''],
         'description': '那一天，人类想起来被巨人支配的恐怖',
         'content': '',
         'tag': ['热血', '战斗'],
@@ -180,7 +180,7 @@ var Top = (_dec = (0, _wepyRedux.connect)({
         'id': ''
       }, {
         'name': '命运石之门0',
-        'image': ['http://p79mwfmry.bkt.clouddn.com/%E7%9F%B3%E5%A4%B4%E9%97%A8.jpg', '', ''],
+        'image': ['http://233.calamus.xyz/image/233/%E5%91%BD%E8%BF%90%E7%9F%B3%E4%B9%8B%E9%97%A80.jpeg', '', ''],
         'description': '一切都是命运石之门的选择',
         'content': '',
         'tag': ['致郁', '时间穿越', '神作'],
@@ -228,7 +228,7 @@ var Top = (_dec = (0, _wepyRedux.connect)({
     key: 'initPageData',
     value: function initPageData() {
       // 处理轮播图
-      this.swipers.push({ image: 'http://p79mwfmry.bkt.clouddn.com/2.jpg', url: '' });
+      this.swipers.push({ image: 'https://233.calamus.xyz/2.jpg', url: '' });
     }
   }]);
 

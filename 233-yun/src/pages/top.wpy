@@ -80,8 +80,8 @@
 
     data = {
       swipers: [
-        {image: 'http://p79mwfmry.bkt.clouddn.com/2.jpg', url: ''},
-        {image: 'http://p79mwfmry.bkt.clouddn.com/3.jpg', url: ''}
+        {image: 'https://233.calamus.xyz/2.jpg', url: ''},
+        {image: 'https://233.calamus.xyz/3.jpg', url: ''}
       ],
       ads:['欢迎加群：575180837','主站：www.calamus.xyz'],
       list:[]
@@ -107,22 +107,22 @@
       let self = this
     }
     
-//生命周期函数，其他自定义方法等
-      initPage(){
-          this.getAnime()
-          this.initPageData()
-      }
-      initPageData(){
-        // 处理轮播图
-        this.swipers.push({image: 'http://p79mwfmry.bkt.clouddn.com/2.jpg',url:''})
-      }
-      async getAnime(){
-          const db = wx.cloud.database()
-          db.collection('anime').get().then(res=>{
-              this.list = res.data ;
-              console.log(this.list)
-              this.$apply();
-          })
-      }
+  //生命周期函数，其他自定义方法等
+    initPage(){
+        this.getAnime()
+        this.initPageData()
+    }
+    initPageData(){
+      // 处理轮播图
+      this.swipers.push({image: 'https://233.calamus.xyz/1.jpg',url:''})
+    }
+    async getAnime(){
+        const db = wx.cloud.database()
+        await db.collection('anime').get().then(res=>{
+            this.list = res.data ;
+            console.log(this.list)
+            this.$apply();
+        })
+    }
   }
 </script>

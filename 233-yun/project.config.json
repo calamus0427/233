@@ -5,12 +5,14 @@
 		"urlCheck": false,
 		"es6": false,
 		"postcss": true,
-		"minified": true,
-		"newFeature": true
+		"minified": false,
+		"newFeature": true,
+		"autoAudits": true,
+		"uglifyFileName": false
 	},
 	"appid": "wx4b2e83f35cd8e203",
 	"projectname": "233-yun",
-	"libVersion": "2.2.5",
+	"libVersion": "2.5.1",
 	"condition": {
 		"search": {
 			"current": -1,

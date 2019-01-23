@@ -44,7 +44,7 @@ var BookList = function (_wepy$component) {
         type: Object,
         default: [{
           'title': '命运石之门',
-          'image': ['http://p79mwfmry.bkt.clouddn.com/%E7%9F%B3%E5%A4%B4%E9%97%A8.jpg', '', ''],
+          'image': ['http://233.calamus.xyz/image/233/%E5%91%BD%E8%BF%90%E7%9F%B3%E4%B9%8B%E9%97%A80.jpeg', '', ''],
           'description': '一切都是命运石之门的选择',
           'content': '',
           'tag': ['致郁', '时间穿越', '神作'],

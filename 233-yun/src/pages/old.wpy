@@ -94,7 +94,7 @@
     }
     async getAnimeTag(){
       const db = wx.cloud.database()
-      db.collection('tag').get().then(res=>{
+      await db.collection('tag').get().then(res=>{
           this.categories.list = res.data ;
           console.log(this.categories.list)
           this.$apply();
@@ -103,7 +103,7 @@
     async getList(){
        const db = wx.cloud.database()
        const _ = db.command
-        db.collection('anime').where({
+        await db.collection('anime').where({
             tag: _.in([this.currentTitle]),
         })
         .get().then(res=>{
