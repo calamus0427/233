@@ -52,6 +52,7 @@ wepy build --watch
 - [x] 广告
 - [x] 新番推荐
 - [x] 跳转详情
+- [ ] 评论
 
 ### 番剧索引
 - [x] 分类；
@@ -64,17 +65,17 @@ wepy build --watch
 - [ ] 追番信息存储；
 - [ ] 动态心情；
 
+### 图片/漫画分享
+- [ ] 图片/漫画分享；
+- [ ] 滚动加载；
+
 ## 组件说明
 - [x] 星级评分；
 - [x] 侧边栏滚动；
 - [x] 番剧列表；
 - [x] 滚动广告；
 
-## 更新日志
 
-
-## License
-MIT
 
 ## 支持我
 - 二次元/前端群：575180837
@@ -91,3 +92,9 @@ MIT
     <img src="https://cdn.calamus.xyz/mayun.bmp" alt="支付宝" width="150"  />
     <img src="https://cdn.calamus.xyz/mahuateng.bmp" alt="微信" width="150"  />
 </div>
+
+## 更新日志
+
+
+## License
+MIT
