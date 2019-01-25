@@ -6,21 +6,21 @@
 </style>
 <template>
   <view class="stars">
-    <image src="{{star >= 1 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
-    <image src="{{star >= 2 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
-    <image src="{{star >= 3 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
-    <image src="{{star >= 4 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
-    <image src="{{star >= 5 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+    --{{starnum}}--
+    <!-- <image src="{{starnum >= 1 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+    <image src="{{starnum >= 2 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+    <image src="{{starnum >= 3 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+    <image src="{{starnum >= 4 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+    <image src="{{starnum >= 5 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/> -->
   </view>
 </template>
 <script>
   import wepy from 'wepy'
 
-  export default class Stars extends wepy.component {
+  export default class Like extends wepy.component {
     props = {
-      star:{
-        type: String,
-        default:'5'
+      starnum:{
+        type: String
       }
     }
     data = {

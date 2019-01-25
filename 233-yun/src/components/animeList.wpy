@@ -6,17 +6,24 @@
     </view>
     <block wx:if="{{list.length > 0}}">
       <block wx:for="{{list}}" wx:key="index">
-        <navigator url="/pages/webDetail" class="animelist-item">
+        <view  @tap="ShowDetail({{item.detailPath}})" class="animelist-item">
           <view class="animelist-item-image">
             <image src="{{item.image[0]}}" mode="aspectFill"/>
           </view>
           <view class="animelist-item-content">
             <view class="animeList-item-main">
+              <view class="animeList-item-name color-gray">{{item.name}}</view>
               <view class="animeList-item-right">
-                <text class="animeList-item-name color-gray">{{item.name}}</text>
-                <Stars :star="item.stars"></Stars>
-              </view>
+                <view class="stars">
+                  <image src="{{item.stars >= 1 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+                  <image src="{{item.stars >= 2 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+                  <image src="{{item.stars >= 3 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+                  <image src="{{item.stars >= 4 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+                  <image src="{{item.stars >= 5 ? icon_star_active:icon_star}}" class="staricon" mode="aspectFit"/>
+                </view>
                 <text class="animeList-item-time">{{item.createTime}}</text>
+              </view>
+                
             </view>
             <view class="animeList-item-description">{{item.description}}</view>
             <view class="animeList-item-bottom">
@@ -39,7 +46,7 @@
               </block>
             </view>
           </view>
-        </navigator>
+        </view>
       </block>
       <block wx:if="{{loading}}">
         <view class="weui-loadmore">
@@ -65,11 +72,11 @@
   import wepy from 'wepy'
   import http from '../mixins/http'
   import base from '../mixins/base'
-  import Stars from './stars'
+  import Like from './stars'
 
   export default class animeList extends wepy.component {
     components = {
-      Stars: Stars
+      Like: Like
     }
     mixins = [base, http]
     props = {
@@ -108,7 +115,9 @@
 
     data = {
       icon_eye: '/images/icon/addBefore.jpg',
-      icon_eye_active: '/images/icon/addAfter.jpg'
+      icon_eye_active: '/images/icon/addAfter.jpg',
+      icon_star: '/images/icon/icon-star@2x.png',
+      icon_star_active: '/images/icon/icon-star-active@2x.png'
     }
 
     computed = {
@@ -154,6 +163,12 @@
             })
           }
         })
+      },
+      ShowDetail(path){
+        var path = JSON.stringify(path);
+        wx.navigateTo({
+          url: '/pages/webDetail?path=' + path
+        })
       }
     }
   }
@@ -176,6 +191,9 @@
   display:flex;
   align-items:center;
 }
+.animelist-item-content{
+  width:100%
+}
 .animeList-item-main{
   display:flex;
   align-items:center;
@@ -189,6 +207,7 @@
 .animeList-item-right{
   display:flex;
   align-items:center;
+  justify-content:flex-end;
 }
 .animelist-item-image image{
   padding:8px;
@@ -198,6 +217,16 @@
 .animeList-item-time{
   font-size:70%;
   color:#9B9B9B;
+  min-width:75px;
+  display:inline-block;
+}
+.animeList-item-name{
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  word-break:break-all;
+  text-overflow:ellipsis;
+  display:-webkit-box;
 }
 .animeList-item-description{
   color:#999;
@@ -220,5 +249,14 @@
 }
 .animeList-item-flag{
   font-size:80%;
+}
+.stars{
+  min-width:50px;
+  text-align:right;
+  margin-right:6rpx;
+}
+.staricon{
+  width:10px;
+  height:10px;
 }
 </style>

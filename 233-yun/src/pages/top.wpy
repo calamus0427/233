@@ -23,7 +23,7 @@
     <!-- <SearchBar :placeholder="searchText"></SearchBar> -->
     <Swiper :list.sync="swipers" height="280"></Swiper>
     <Ads :ads="ads"></Ads>
-    <animeList :list.sync="list" title="追番推荐"
+    <animeList :list.sync="list" title="1月新番推荐"
      :loading.sync="loading" :noMore.sync="noMoreList"></animeList>
   </view>
 </template>
@@ -118,9 +118,11 @@
     }
     async getAnime(){
         const db = wx.cloud.database()
-        await db.collection('anime').get().then(res=>{
+        await db.collection('anime').where({
+          top: true
+        }).get().then(res=>{
             this.list = res.data ;
-            console.log(this.list)
+            console.log("list",this.list)
             this.$apply();
         })
     }

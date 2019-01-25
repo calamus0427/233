@@ -11,7 +11,7 @@ page{
 
   export default class webDetail extends wepy.page {
     data = {
-      path:"https://mp.weixin.qq.com/s/MhnNBpyQS_uDdO6FUlte1w"
+      path:""
     }
 
     events = {
@@ -21,8 +21,9 @@ page{
     methods = {
 
     }
-
-    onLoad () {
+    onLoad(options) {
+      console.log("options",JSON.parse(options.path))
+      this.path = JSON.parse(options.path)
     }
   }
 </script>
