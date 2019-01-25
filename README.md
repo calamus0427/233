@@ -12,9 +12,12 @@
 
 
 ## 部分截图
-![首页](https://233.calamus.xyz/image/233/233show1.jpeg)
-![索引页](https://233.calamus.xyz/image/233/233show2.jpeg)
-![个人信息管理](https://233.calamus.xyz/image/233/233show3.jpeg)
+<div style="display:flex">
+    <img src="https://233.calamus.xyz/image/233/233show1.jpeg" alt="首页" width="400"  />
+    <img src="https://233.calamus.xyz/image/233/233show2.jpeg" alt="索引页" width="400"  />
+    <img src="https://233.calamus.xyz/image/233/233show3.jpeg" alt="个人信息管理" width="400"  />
+</div>
+
 
 ## 技术栈
 - wepy
