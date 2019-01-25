@@ -13,9 +13,9 @@
 
 ## 部分截图
 <div style="display:flex">
-    <img src="https://233.calamus.xyz/image/233/233show1.jpeg" alt="首页" width="400"  />
-    <img src="https://233.calamus.xyz/image/233/233show2.jpeg" alt="索引页" width="400"  />
-    <img src="https://233.calamus.xyz/image/233/233show3.jpeg" alt="个人信息管理" width="400"  />
+    <img src="https://233.calamus.xyz/image/233/233show1.jpeg" alt="首页" width="200"  />
+    <img src="https://233.calamus.xyz/image/233/233show2.jpeg" alt="索引页" width="200"  />
+    <img src="https://233.calamus.xyz/image/233/233show3.jpeg" alt="个人信息管理" width="200"  />
 </div>
 
 
@@ -77,8 +77,12 @@ wepy build --watch
 MIT
 
 ## 支持我
-- 公众号
-![公众号：世界第一帅蒲](https://cdn.calamus.xyz/wechat.jpg)
-- 打赏
-![支付宝](https://cdn.calamus.xyz/mayun.bmp)
-![微信](https://cdn.calamus.xyz/mahuateng.bmp)
+- 二次元/前端群：575180837
+    <img src="https://cdn.calamus.xyz/qq%E7%BE%A4.png" alt="qq群" width="150"  />
+- 公众号：世界第一帅蒲
+<img src="https://cdn.calamus.xyz/wechat.jpg" alt="公众号：世界第一帅蒲" width="150"  />
+- 打赏我
+<div style="display:flex">
+    <img src="https://cdn.calamus.xyz/mayun.bmp" alt="支付宝" width="150"  />
+    <img src="https://cdn.calamus.xyz/mahuateng.bmp" alt="微信" width="150"  />
+</div>
