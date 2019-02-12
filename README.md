@@ -92,7 +92,8 @@ wepy build --watch
 </div>
 
 ## 更新日志
-
+--v1.0.0
+    实现云开发及基本数据展示功能
 
 ## License
 MIT
